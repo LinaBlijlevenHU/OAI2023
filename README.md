@@ -1,6 +1,7 @@
 # Oriëntatie op AI 2023/2024
 
 Docent: Lina Blijleven
+
 Studentassistenten: Pepijn Devue (V1K) & Frank van Leijsen (V1D)
 
 Deze repository bevat de codevoorbeelden uit de lessen oriëntatie op Artificial Intelligence.
