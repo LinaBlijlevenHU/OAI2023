@@ -69,6 +69,8 @@ def factorial(x):
 x_values = np.arange(0, 51, 10)
 
 # Plot the functions
+# Note: when uncommenting the lower functions, the upper functions will become
+# near impossible to read.
 plt.plot(x_values, constant(x_values), label='Constant (y=1)', color='blue')
 plt.plot(x_values, linear(x_values), label='Linear (y=n)', color='green')
 #plt.plot(x_values, quadratic(x_values), label='Quadratic (y=n^2)', color='red')
