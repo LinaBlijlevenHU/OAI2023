@@ -1,5 +1,5 @@
 """
-Function_plots.py
+function_plots.py
 
 An example of different functions in the same plot.
 Note: this makes the plot unreadable. The best way to explore
@@ -66,20 +66,21 @@ def factorial(x):
     return [math.factorial(val) for val in x]
 
 # Generate x values
-x_values = np.arange(0, 51, 10)
+x_values = np.arange(0, 1001, 50)
 
 # Plot the functions
 # Note: when uncommenting the lower functions, the upper functions will become
 # near impossible to read.
 plt.plot(x_values, constant(x_values), label='Constant (y=1)', color='blue')
 plt.plot(x_values, linear(x_values), label='Linear (y=n)', color='green')
-#plt.plot(x_values, quadratic(x_values), label='Quadratic (y=n^2)', color='red')
-#plt.plot(x_values, exponential(x_values), label='Exponential (y=2^n)', color='purple')
+plt.plot(x_values, quadratic(x_values), label='Quadratic (y=n^2)', color='red')
+plt.plot(x_values, exponential(x_values), label='Exponential (y=2^n)', color='purple')
 #plt.plot(x_values, factorial(x_values), label='Factorial (y=n!)', color='orange')
 
 # Add labels and legend
 plt.xlabel('x')
 plt.ylabel('y')
+plt.ylim(0, 1000)
 plt.title('Plot of Different Functions')
 plt.legend()
 
