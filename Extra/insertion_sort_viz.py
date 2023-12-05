@@ -4,10 +4,13 @@ import random
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
-N_BARS = 20  # Set the number of bars for the dataset
+N_BARS = 50  # Set the number of bars for the dataset
 
-# Keep track of which algorithms are still working
+# Keep track of algorithms running
 INSERTION_RUNNING, SELECTION_RUNNING = True, True
+
+# Titles for the plots
+INSERTION_TITLE, SELECTION_TITLE = 'Insertion Sort', 'Selection Sort'
 
 
 def simulate_dataset():
@@ -56,7 +59,7 @@ def insertion_sort_animation(ax, arr):
     Tuple[List[int], List[matplotlib.patches.Rectangle], List[int]]:
         A tuple containing the updated array, bar rectangles, and current iteration count for animation.
     """
-    ax.set_title('Insertion Sort Visualization')
+    ax.set_title(INSERTION_TITLE)
     bar_rects = ax.bar(range(len(arr)), arr, color='lightblue', edgecolor='black')
     iterations = [0]
 
@@ -85,7 +88,7 @@ def selection_sort_animation(ax, arr):
     Tuple[List[int], List[matplotlib.patches.Rectangle], List[int]]:
         A tuple containing the updated array, bar rectangles, and current iteration count for animation.
     """
-    ax.set_title('Selection Sort Visualization')
+    ax.set_title(SELECTION_TITLE)
     bar_rects = ax.bar(range(len(arr)), arr, color='lightcoral', edgecolor='black')
     iterations = [0]
 
@@ -139,7 +142,7 @@ def main():
         insertion_data = next(insertion_sort_gen, None)
 
         if insertion_data is not None:
-            yield insertion_data, ax, 'Selection Sort'
+            yield insertion_data, ax, INSERTION_TITLE
         else:
             INSERTION_RUNNING = False
 
@@ -155,7 +158,7 @@ def main():
         selection_data = next(selection_sort_gen, None)
 
         if selection_data is not None:
-            yield selection_data, ax, 'Selection Sort'
+            yield selection_data, ax, SELECTION_TITLE
         else:
             SELECTION_RUNNING = False
 
