@@ -2,8 +2,8 @@ def faculteit(n):
     """
     Bereken recursief de faculteit van een gegeven getal.
 
-    :param  int:    Gegeven getal
-    :return int:    Resultaat
+    :param  n:      Gegeven getal
+    :return:        Resultaat
     """
     print(f"{n}")
 
@@ -12,5 +12,6 @@ def faculteit(n):
         return 1
 
     return n * faculteit(n-1)
+
 
 print(faculteit(8))
